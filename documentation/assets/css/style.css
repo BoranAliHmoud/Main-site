@@ -1174,3 +1174,7 @@ ul.item-details li {
 	left: 0;
 	top: 8px;
 }
+.service-single__left-item ul li {
+    list-style: disc;
+    list-style-position: inside;
+}
