@@ -5279,3 +5279,10 @@ input.main-search-input::placeholder {
     transform: scale(2);
   }
 }/*# sourceMappingURL=style.css.map */
+
+/*New Styles*/
+
+.service-single__left-item ul li {
+  list-style: disc;
+  list-style-position: inside;
+}
