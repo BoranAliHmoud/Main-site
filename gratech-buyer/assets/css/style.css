@@ -3738,7 +3738,7 @@ input.main-search-input::placeholder {
   visibility: hidden;
   transform: translateY(20px);
   position: absolute;
-  right: 40px;
+  right: 30px;
   bottom: 40px;
   z-index: 2;
 }
