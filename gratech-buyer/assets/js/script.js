@@ -29,6 +29,17 @@ CSS TABLE OF CONTENTS
 
 ------------------------------------------------------------------*/
 // Main Site menu
+
+$(window).on('load',function(){
+  var pathParts = window.location.pathname.split('/');
+    
+  // If there's more than one part in the path, we're in a subfolder
+  var imagePath = (pathParts.length > 3) ? "../assets/images/logo/logo-light.svg" : "assets/images/logo/logo-light.svg";
+  
+  // Set the image source dynamically
+  $("#myImage").attr("src", imagePath);})
+
+
 $("body").prepend(
   `<div class="header-top d-none d-lg-block">
         <div class="container header__container">
@@ -73,7 +84,7 @@ $("body").prepend(
         <div class="container header__container">
             <div class="header__main">
                 <a href="index.html" class="logo">
-                    <img src="assets/images/logo/logo-light.svg" alt="logo">
+                    <img id="myImage" alt="logo">
                 </a>
                 <div class="main-menu">
                     <nav>
