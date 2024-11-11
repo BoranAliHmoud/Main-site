@@ -30,15 +30,18 @@ CSS TABLE OF CONTENTS
 ------------------------------------------------------------------*/
 // Main Site menu
 
-$(window).on('load',function(){
-  var pathParts = window.location.pathname.split('/');
-    
-  // If there's more than one part in the path, we're in a subfolder
-  var imagePath = (pathParts.length > 3) ? "../assets/images/logo/logo-light.svg" : "assets/images/logo/logo-light.svg";
-  
-  // Set the image source dynamically
-  $("#myImage").attr("src", imagePath);})
+$(window).on("load", function () {
+  var pathParts = window.location.pathname.split("/");
 
+  // If there's more than one part in the path, we're in a subfolder
+  var imagePath =
+    pathParts.length > 3
+      ? "../assets/images/logo/logo.png"
+      : "assets/images/logo/logo.png";
+
+  // Set the image source dynamically
+  $("#myImage").attr("src", imagePath);
+});
 
 $("body").prepend(
   `<div class="header-top d-none d-lg-block">
@@ -50,7 +53,7 @@ $("body").prepend(
                                 d="M13.8748 8.50453C13.8748 9.85566 12.7757 10.953 11.4263 10.953H3.39325C2.04384 10.953 0.94475 9.85563 0.94475 8.50453V3.39322C0.944449 2.95776 1.06111 2.53021 1.28253 2.15525L5.20216 6.07488C5.78856 6.663 6.57384 6.98706 7.41059 6.98706C8.24563 6.98706 9.03091 6.663 9.61731 6.07488L13.5369 2.15525C13.7584 2.5302 13.875 2.95776 13.8747 3.39322V8.50453H13.8748ZM11.4263 0.94475H3.39325C2.836 0.94475 2.32159 1.13334 1.91009 1.44712L5.86916 5.40791C6.27897 5.81597 6.82591 6.04231 7.41059 6.04231C7.99356 6.04231 8.54053 5.81597 8.95031 5.40791L12.9094 1.44712C12.4979 1.13334 11.9835 0.94475 11.4263 0.94475ZM11.4263 0H3.39325C1.52259 0 0 1.52259 0 3.39325V8.50456C0 10.3769 1.52259 11.8978 3.39325 11.8978H11.4263C13.2969 11.8978 14.8195 10.3769 14.8195 8.50456V3.39322C14.8195 1.52256 13.2969 0 11.4263 0Z"
                                 fill="white" />
                         </svg>
-                        <a href="#0" class="ms-1">info@example.com</a>
+                        <a href="#0" class="ms-1">info@digitrendbs.com​</a>
                     </li>
                     <li class="ms-4"><svg width="16" height="15" viewBox="0 0 16 15" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +71,7 @@ $("body").prepend(
                                 </clipPath>
                             </defs>
                         </svg>
-                        <a href="#0" class="ms-1">+208-6666-0112</a>
+                        <a href="#0" class="ms-1">+966-533011408​</a>
                     </li>
                 </ul>
                 <ul class="link-info">
@@ -104,42 +107,13 @@ $("body").prepend(
                                     </li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="#0">Pages</a>
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a href="case.html">Case Study 01</a>
-                                    </li>
-                                    <li>
-                                        <a href="case-2.html">Case Study 02</a>
-                                    </li>
-                                    <li>
-                                        <a href="case-details.html">Case Study Details</a>
-                                    </li>
-                                    <li>
-                                        <a href="team.html">Our Team</a>
-                                    </li>
-                                    <li>
-                                        <a href="team-details.html">Team Details</a>
-                                    </li>
-                                    <li>
-                                        <a href="pricing.html">Pricing</a>
-                                    </li>
-                                    <li>
-                                        <a href="faq.html">FAQ's</a>
-                                    </li>
-                                    <li>
-                                        <a href="error.html">404 Error</a>
-                                    </li>
-                                </ul>
-                            </li>
                             <li><a href="contact.html">Contact</a></li>
 							 <li class="ml-20 d-none d-lg-block"><a class="search-trigger" href="#0"><svg width="17"
                                         height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_307_344)">
                                             <path
                                                 d="M16.0375 14.9381L12.0784 11.0334C13.0625 9.86621 13.6554 8.36744 13.6554 6.73438C13.6554 3.02103 10.5925 0 6.82774 0C3.0629 0 0 3.02103 0 6.73438C0 10.4475 3.0629 13.4683 6.82774 13.4683C8.4834 13.4683 10.0031 12.8836 11.1865 11.913L15.1456 15.8178C15.2687 15.9393 15.4301 16 15.5915 16C15.7529 16 15.9143 15.9393 16.0375 15.8178C16.2839 15.5748 16.2839 15.181 16.0375 14.9381ZM1.26142 6.73438C1.26142 3.70705 3.75845 1.24414 6.82774 1.24414C9.89695 1.24414 12.3939 3.70705 12.3939 6.73438C12.3939 9.76146 9.89695 12.2241 6.82774 12.2241C3.75845 12.2241 1.26142 9.76146 1.26142 6.73438Z"
-                                                fill="#0F0D1D" />
+                                                fill="#fff" />
                                         </g>
                                         <defs>
                                             <clipPath id="clip0_307_344">
@@ -176,11 +150,9 @@ $("body").append(`<footer class="footer-area secondary-bg">
             <div class="footer__wrp pt-100 pb-100">
                 <div class="footer__item item-big wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
                     <a href="index.html" class="logo mb-30">
-                        <img src="assets/images/logo/logo.svg" alt="image">
+                        <img src="assets/images/logo/logo.png" alt="image">
                     </a>
-                    <p>Phasellus ultricies aliquam volutpat
-                        ullamcorper laoreet neque, a lacinia
-                        curabitur lacinia mollis</p>
+                    <p>At Digitrend for Business solution , we are dedicated to helping businesses thrive in the digital age.</p>
                     <div class="social-icon">
                         <a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="#0"><i class="fa-brands fa-twitter"></i></a>
@@ -219,15 +191,15 @@ $("body").append(`<footer class="footer-area secondary-bg">
                 </div>
                 <div class="footer__item item-big wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
                     <h3 class="footer-title">Contact Us</h3>
-                    <p class="mb-20">4517 Washington Ave. Manchester, Kentucky 39495</p>
+                    <p class="mb-20">Mohammad bin Abdulaziz Road, AlJedaie Office - Riyadh - KSA</p>
                     <ul class="footer-contact">
                         <li>
-                            <i class="fa-regular fa-clock"></i>
+                            <i class="fa-regular fa-envelope"></i>
                             <div class="info">
                                 <h5>
-                                    Opening Hours:
+                                    E-Mail:
                                 </h5>
-                                <p>Mon - Sat: 10.00 AM - 4.00 PM</p>
+                                <p>info@digitrendbs.com​</p>
                             </div>
                         </li>
                         <li>
@@ -236,7 +208,7 @@ $("body").append(`<footer class="footer-area secondary-bg">
                                 <h5>
                                     Phone Call:
                                 </h5>
-                                <p>208-6666-0112, 308-5555-0113</p>
+                                <p>+966-533011408</p>
                             </div>
                         </li>
                     </ul>
@@ -248,7 +220,7 @@ $("body").append(`<footer class="footer-area secondary-bg">
                 <div
                     class="d-flex gap-1 flex-wrap align-items-center justify-content-md-between justify-content-center">
                     <p class="wow fadeInDown" data-wow-delay="00ms" data-wow-duration="1500ms">&copy; All Copyright 2024
-                        by <a href="#0">Gratech</a></p>
+                        by <a href="#0">DIGITRENDBS</a></p>
                     <ul class="d-flex align-items-center gap-4 wow fadeInDown" data-wow-delay="200ms"
                         data-wow-duration="1500ms">
                         <li><a href="#0">Terms & Condition</a></li>
