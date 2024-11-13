@@ -28,23 +28,21 @@ CSS TABLE OF CONTENTS
 15. wow animation
 
 ------------------------------------------------------------------*/
-// Main Site menu
-
+var lang = $("html").attr("lang");
+var imagePath;
+var imageDir;
 $(window).on("load", function () {
   var pathParts = window.location.pathname.split("/");
-
-  // If there's more than one part in the path, we're in a subfolder
-  var imagePath =
-    pathParts.length > 3
-      ? "../assets/images/logo/logo.png"
-      : "assets/images/logo/logo.png";
-
-  // Set the image source dynamically
-  $("#myImage").attr("src", imagePath);
-});
-
-$("body").prepend(
-  `<div class="header-top d-none d-lg-block">
+  imagePath = pathParts.length > 3 ? "../assets/images/" : "assets/images/";
+  if (lang === "ar") {
+    imageDirRight = "left";
+    imageDirLeft = "right";
+  } else {
+    imageDirRight = "right";
+    imageDirLeft = "left";
+  }
+  $("body").prepend(
+    `<div class="header-top d-none d-lg-block">
         <div class="container header__container">
             <div class="header-top-wrp">
                 <ul class="info">
@@ -87,7 +85,7 @@ $("body").prepend(
         <div class="container header__container">
             <div class="header__main">
                 <a href="index.html" class="logo">
-                    <img id="myImage" alt="logo">
+                <img src="${imagePath}logo/logo.png" alt="logo">;
                 </a>
                 <div class="main-menu">
                     <nav>
@@ -127,30 +125,30 @@ $("body").prepend(
                 </div>
             </div>
     </header>`
-);
+  );
 
-//Footer
-$("body").append(`<footer class="footer-area secondary-bg">
-        <div class="footer__shape-regular-left wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
-            <img src="assets/images/shape/footer-regular-left.png" alt="shape">
+  //Footer
+  $("body").append(`<footer class="footer-area secondary-bg">
+        <div class="footer-images footer__shape-regular-${imageDirLeft} wow slideIn${imageDirLeft}" data-wow-delay="00ms" data-wow-duration="1500ms">
+            <img src="${imagePath}shape/footer-regular-${imageDirLeft}.png" alt="shape">
         </div>
-        <div class="footer__shape-solid-left wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-            <img class="sway_Y__animation" src="assets/images/shape/footer-solid-left.png" alt="shape">
+        <div class="footer-images footer__shape-solid-${imageDirLeft} wow slideIn${imageDirLeft}" data-wow-delay="200ms" data-wow-duration="1500ms">
+            <img class="sway_Y__animation" src="${imagePath}shape/footer-solid-${imageDirLeft}.png" alt="shape">
         </div>
-        <div class="footer__shape-solid-right wow slideInRight" data-wow-delay="00ms" data-wow-duration="1500ms">
-            <img class="sway_Y__animation" src="assets/images/shape/footer-regular-right.png" alt="shape">
+        <div class="footer-images footer__shape-solid-${imageDirRight} wow slideIn${imageDirRight}" data-wow-delay="00ms" data-wow-duration="1500ms">
+            <img class="sway_Y__animation" src="${imagePath}shape/footer-regular-${imageDirRight}.png" alt="shape">
         </div>
-        <div class="footer__shape-regular-right wow slideInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
-            <img src="assets/images/shape/footer-solid-right.png" alt="shape">
+        <div class="footer-images footer__shape-regular-${imageDirRight} wow slideIn${imageDirRight}" data-wow-delay="200ms" data-wow-duration="1500ms">
+            <img src="${imagePath}shape/footer-solid-${imageDirRight}.png" alt="shape">
         </div>
-        <div class="footer__shadow-shape">
-            <img src="assets/images/shape/footer-shadow-shape.png" alt="shodow">
+        <div class="footer-images footer__shadow-shape">
+            <img src="${imagePath}shape/footer-shadow-shape.png" alt="shodow">
         </div>
         <div class="container">
             <div class="footer__wrp pt-100 pb-100">
                 <div class="footer__item item-big wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
                     <a href="index.html" class="logo mb-30">
-                        <img src="assets/images/logo/logo.png" alt="image">
+                        <img src="${imagePath}/logo/logo.png" alt="image">
                     </a>
                     <p>At Digitrend for Business solution , we are dedicated to helping businesses thrive in the digital age.</p>
                     <div class="social-icon">
@@ -163,30 +161,26 @@ $("body").append(`<footer class="footer-area secondary-bg">
                 <div class="footer__item item-sm wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
                     <h3 class="footer-title">IT Solution</h3>
                     <ul>
-                        <li><a href="service-details.html"><i class="fa-regular fa-angles-right me-1"></i> IT
+                        <li><a href="service-details.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i> IT
                                 Management</a></li>
-                        <li><a href="service-details.html"><i class="fa-regular fa-angles-right me-1"></i> SEO
+                        <li><a href="service-details.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i> SEO
                                 Optimization</a>
                         </li>
-                        <li><a href="service-details.html"><i class="fa-regular fa-angles-right me-1"></i> Web
+                        <li><a href="service-details.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i> Web
                                 Development</a>
                         </li>
-                        <li><a href="service-details.html"><i class="fa-regular fa-angles-right me-1"></i> Cyber
+                        <li><a href="service-details.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i> Cyber
                                 Security</a></li>
-                        <li><a href="service-details.html"><i class="fa-regular fa-angles-right me-1"></i> Data
+                        <li><a href="service-details.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i> Data
                                 Security</a></li>
                     </ul>
                 </div>
                 <div class="footer__item item-sm wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
                     <h3 class="footer-title">Quick Link</h3>
                     <ul>
-                        <li><a href="about.html"><i class="fa-regular fa-angles-right me-1"></i> About Gratech</a></li>
-                        <li><a href="service.html"><i class="fa-regular fa-angles-right me-1"></i> Our Services</a>
+                        <li><a href="about.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i> About Digitrend</a></li>
+                        <li><a href="service.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i> Our Services</a>
                         </li>
-                        <li><a href="pricing.html"><i class="fa-regular fa-angles-right me-1"></i> Pricing Plan</a>
-                        </li>
-                        <li><a href="case.html"><i class="fa-regular fa-angles-right me-1"></i> Our Projects</a></li>
-                        <li><a href="team.html"><i class="fa-regular fa-angles-right me-1"></i> Our Team</a></li>
                     </ul>
                 </div>
                 <div class="footer__item item-big wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
@@ -235,7 +229,7 @@ $("body").append(`<footer class="footer-area secondary-bg">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
     </div>`);
-
+});
 (function ($) {
   ("use strict");
   // Preloader area start here ***

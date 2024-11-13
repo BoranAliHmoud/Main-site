@@ -1,0 +1,14 @@
+html {
+  direction: rtl;
+}
+.header-area::after {
+  clip-path: polygon(0% 0, 90% 0%, 100% 100%, 0% 100%);
+}
+
+/* Flip images for RTL version (Arabic) */
+html[dir="rtl"] .banner__slider img,
+.service-area img,
+.counter__shape img,
+.footer-images {
+  transform: scaleX(-1); /* Flip image horizontally in RTL */
+}
