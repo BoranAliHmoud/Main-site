@@ -29,11 +29,107 @@ CSS TABLE OF CONTENTS
 
 ------------------------------------------------------------------*/
 var lang = $("html").attr("lang");
+
+const keywords = {
+  "terms-condition": {
+    en: "Terms & Condition",
+    ar: "الشروط والأحكام",
+  },
+  "privacy-policy": {
+    en: "Privacy Policy",
+    ar: "سياسة الخصوصية",
+  },
+  DIGITRENDBS: {
+    en: "DIGITRENDBS",
+    ar: "التوجه الرقمي لحلول الاعمال",
+  },
+  "All-Copyright": {
+    en: "All Copyright 2024",
+    ar: "جميع الحقوق محفوظة 2024",
+  },
+  "Phone-Call": {
+    en: "Phone Call",
+    ar: "رقم الهاتف",
+  },
+  "E-Mail": {
+    en: "E-Mail:",
+    ar: "البريد الإلكتروني:",
+  },
+  address: {
+    en: "Mohammad bin Abdulaziz Road, AlJedaie Office - Riyadh - KSA",
+    ar: "طريق محمد بن عبدالعزيز، مكتب الجديعي - الرياض - المملكة العربية السعودية",
+  },
+  "Contact-Us": {
+    en: "Contact Us",
+    ar: "اتصل بنا",
+  },
+  "Quick-Link": {
+    en: "Quick Link",
+    ar: "روابط سريعة",
+  },
+  "About-Digitrend": {
+    en: "About Digitrend",
+    ar: "حول التوجه الرقمي لحلول الاعمال",
+  },
+  "Our-Services": {
+    en: "Our Services",
+    ar: "خدماتنا",
+  },
+  "data-security": {
+    en: "Data Security",
+    ar: "أمن البيانات",
+  },
+  "cyber-security": {
+    en: "Cyber Security",
+    ar: "الأمن السيبراني",
+  },
+  "web-development": {
+    en: "Web Development",
+    ar: "تطوير المواقع",
+  },
+  "seo-optimization": {
+    en: "SEO Optimization",
+    ar: "تحسين محركات البحث",
+  },
+  "it-management": {
+    en: "IT Management",
+    ar: "إدارة تقنية المعلومات",
+  },
+  services: {
+    en: "Services",
+    ar: "الخدمات",
+  },
+  about: {
+    en: "About",
+    ar: "حول",
+  },
+  AboutInfo: {
+    en: "At Digitrend for Business solution , we are dedicated to helping businesses thrive in the digital age.",
+    ar: "في شركة التوجه الرقمي لحلول الاعمال ، نحن ملتزمون بمساعدة الشركات على الازدهار في العصر الرقمي.",
+  },
+  contact: {
+    en: "Contact",
+    ar: "محتوى",
+  },
+  "IT-Solution": {
+    en: "IT Solution",
+    ar: "حلول تقنية المعلومات",
+  },
+};
+function getKeyword(keyword) {
+  return keywords[keyword]
+    ? keywords[keyword][lang] || keywords[keyword].en
+    : keyword;
+}
 var imagePath;
+
+var urlPath;
 var imageDir;
 $(window).on("load", function () {
   var pathParts = window.location.pathname.split("/");
   imagePath = pathParts.length > 3 ? "../assets/images/" : "assets/images/";
+  urlPath = pathParts.length > 3 ? "../" : "";
+
   if (lang === "ar") {
     imageDirRight = "left";
     imageDirLeft = "right";
@@ -45,28 +141,32 @@ $(window).on("load", function () {
     `<header class="header-area">
         <div class="container header__container">
             <div class="header__main">
-                <a href="index.html" class="logo">
-                <img src="${imagePath}logo/logo.png" alt="logo">
+                <a href="${urlPath}index.html" class="logo">
+                <img src="${imagePath}logo/logo.png" alt="logo">;
                 </a>
                 <div class="main-menu">
                     <nav>
                         <ul>
-                            <li><a href="about.html">About</a></li>
+                            <li><a href="${urlPath}about.html">${getKeyword(
+      "about"
+    )}</a></li>
                             <li>
-                                <a href="#0">Services</a>
+                                <a href="#0">${getKeyword("services")}</a>
                                 <ul class="sub-menu">
                                     <li>
-                                        <a href="service-solutions.html">IT Solutions</a>
+                                        <a href="${urlPath}service-solutions.html">IT Solutions</a>
                                     </li>
                                     <li>
-                                        <a href="service.html">IT Services</a>
+                                        <a href="${urlPath}service.html">IT Services</a>
                                     </li>
                                     <li>
-                                        <a href="service-details.html">Service Details</a>
+                                        <a href="${urlPath}service-details.html">Service Details</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="${urlPath}contact.html"> ${getKeyword(
+      "contact"
+    )}</a></li>
 							 <li class="ml-20 d-none d-lg-block"><a class="search-trigger" href="#0"><svg width="17"
                                         height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_307_344)">
@@ -111,7 +211,9 @@ $(window).on("load", function () {
                     <a href="index.html" class="logo mb-30">
                         <img src="${imagePath}/logo/logo.png" alt="image">
                     </a>
-                    <p>At Digitrend for Business solution , we are dedicated to helping businesses thrive in the digital age.</p>
+                    <p>
+                    ${getKeyword("AboutInfo")}
+                     </p>
                     <div class="social-icon">
                         <a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="#0"><i class="fa-brands fa-twitter"></i></a>
@@ -120,39 +222,40 @@ $(window).on("load", function () {
                     </div>
                 </div>
                 <div class="footer__item item-sm wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-                    <h3 class="footer-title">IT Solution</h3>
+                    <h3 class="footer-title">${getKeyword("IT-Solution")}</h3>
                     <ul>
-                        <li><a href="service-details.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i> IT
-                                Management</a></li>
-                        <li><a href="service-details.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i> SEO
-                                Optimization</a>
+                        <li><a href="${urlPath}service-details.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i> ${getKeyword("it-management")}</a></li>
+                        <li><a href="${urlPath}service-details.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i>${getKeyword("seo-optimization")} </a>
                         </li>
-                        <li><a href="service-details.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i> Web
-                                Development</a>
+                        <li><a href="${urlPath}service-details.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i>${getKeyword("web-development")} </a>
                         </li>
-                        <li><a href="service-details.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i> Cyber
-                                Security</a></li>
-                        <li><a href="service-details.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i> Data
-                                Security</a></li>
+                        <li><a href="${urlPath}service-details.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i>${getKeyword("cyber-security")} </a></li>
+                        <li><a href="${urlPath}service-details.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i>${getKeyword("data-security")} 
+                                 </a></li>
                     </ul>
                 </div>
                 <div class="footer__item item-sm wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
-                    <h3 class="footer-title">Quick Link</h3>
+                    <h3 class="footer-title">${getKeyword("Quick-Link")}</h3>
                     <ul>
-                        <li><a href="about.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i> About Digitrend</a></li>
-                        <li><a href="service.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i> Our Services</a>
+                        <li><a href="about.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i>${getKeyword("About-Digitrend")}  </a></li>
+                        <li><a href="service.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i> ${getKeyword("Our-Services")}</a>
                         </li>
                     </ul>
                 </div>
                 <div class="footer__item item-big wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
-                    <h3 class="footer-title">Contact Us</h3>
-                    <p class="mb-20">Mohammad bin Abdulaziz Road, AlJedaie Office - Riyadh - KSA</p>
+                    <h3 class="footer-title">  ${getKeyword("Contact-Us")}</h3>
+                    <p class="mb-20">             ${getKeyword(
+                      "address"
+                    )}    </p>
                     <ul class="footer-contact">
                         <li>
                             <i class="fa-regular fa-envelope"></i>
                             <div class="info">
                                 <h5>
-                                    E-Mail:
+                                                            ${getKeyword(
+                                                              "E-Mail"
+                                                            )}     
+ 
                                 </h5>
                                 <p>info@digitrendbs.com​</p>
                             </div>
@@ -161,7 +264,7 @@ $(window).on("load", function () {
                             <i class="fa-duotone fa-phone"></i>
                             <div class="info">
                                 <h5>
-                                    Phone Call:
+                             ${getKeyword("Phone-Call")}     
                                 </h5>
                                 <p>+966-533011408</p>
                             </div>
@@ -173,13 +276,19 @@ $(window).on("load", function () {
         <div class="footer__copyright">
             <div class="container">
                 <div
-                    class="d-flex gap-1 flex-wrap align-items-center justify-content-md-between justify-content-center">
-                    <p class="wow fadeInDown" data-wow-delay="00ms" data-wow-duration="1500ms">&copy; All Copyright 2024
-                        by <a href="#0">DIGITRENDBS</a></p>
+                    class="d-flex gap-1 flex-wrap align-items-center justify-content-md-between justify-content-center"> 
+                    <p class="wow fadeInDown" data-wow-delay="00ms" data-wow-duration="1500ms">&copy; ${getKeyword(
+                      "All-Copyright"
+                    )}
+                        by <a href="#0">${getKeyword("DIGITRENDBS")} </a></p>
                     <ul class="d-flex align-items-center gap-4 wow fadeInDown" data-wow-delay="200ms"
                         data-wow-duration="1500ms">
-                        <li><a href="#0">Terms & Condition</a></li>
-                        <li><a href="#0">Privacy Policy</a></li>
+                        <li><a href="#0">${getKeyword(
+                          "terms-condition"
+                        )}</a></li>
+                        <li><a href="#0">${getKeyword(
+                          "privacy-policy"
+                        )} </a></li>
                     </ul>
                 </div>
             </div>
