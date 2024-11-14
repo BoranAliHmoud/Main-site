@@ -142,7 +142,7 @@ $(window).on("load", function () {
         <div class="container header__container">
             <div class="header__main">
                 <a href="${urlPath}index.html" class="logo">
-                <img src="${imagePath}logo/logo.png" alt="logo">;
+                <img src="${imagePath}logo/logo.png" alt="logo">
                 </a>
                 <div class="main-menu">
                     <nav>
