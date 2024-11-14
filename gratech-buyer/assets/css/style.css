@@ -1525,6 +1525,12 @@ button {
     margin-bottom: 30px;
   }
 }
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1450px !important;
+  }
+}
 .bor {
   border: 1px solid var(--border);
 }
@@ -2424,13 +2430,13 @@ input.main-search-input::placeholder {
 }
 .header__container {
   max-width: 1350px;
-  padding: 0 15px;
 }
 .header__main {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  height: 90px;
 }
 .header__main .main-menu ul {
   display: flex;
@@ -2450,7 +2456,7 @@ input.main-search-input::placeholder {
 }
 .header__main .main-menu ul li a {
   font-weight: 600;
-  padding: 40px 0;
+  padding: 0 0;
 }
 .header__main .main-menu ul li a i {
   font-size: 12px;
@@ -2459,7 +2465,7 @@ input.main-search-input::placeholder {
 .header__main .main-menu ul li .sub-menu {
   position: absolute;
   inset-inline-start: 0;
-  top: 105px;
+  top: 35px;
   z-index: 99;
   flex-direction: column;
   gap: 0;
@@ -2540,7 +2546,7 @@ input.main-search-input::placeholder {
   color: var(--heading-color) !important;
 }
 .header__main .main-menu ul li .sub-menu li a:hover {
-  padding-left: 25px;
+  padding-inline-start: 25px;
   color: var(--primary-color) !important;
 }
 .header__main .main-menu ul li:hover .sub-menu {
@@ -4185,15 +4191,18 @@ input.main-search-input::placeholder {
 
 .brand__wrp {
   padding: 40px 65px;
-  background: var(--gradient-bg);
+  /* background: var(--gradient-bg); */
   position: relative;
   z-index: 1;
+  border: 1px solid #4c52a1;
+  border-radius: 12px;
 }
 .brand__shape {
   position: absolute;
   inset-inline-end: 0;
   bottom: 0;
   opacity: 0.3;
+  display: none;
 }
 .brand__image {
   max-width: 175px;
@@ -5433,11 +5442,11 @@ input.main-search-input::placeholder {
   color: #fff;
 }
 .brand__image.image img {
-  height: 80px;
-}
-.brand__image.image img {
-  height: 80px;
-  width: 140px;
+  height: 70px;
+  width: 150px;
+  /* background-color: #fff; */
+  /* padding: 8px; */
+  object-fit: contain;
 }
 .service-two__item .image img {
   height: 250px;
@@ -5476,4 +5485,147 @@ input.main-search-input::placeholder {
   top: 0;
   inset-inline-start: 0;
   height: 100%;
+}
+.interactive_map {
+  background-image: url("../images/map.png");
+  height: 40vh;
+  background-position: center top;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.contact_us_content p {
+  font-size: 18px;
+  margin: 0px;
+  line-height: 1;
+  font-weight: 600;
+  max-width: 350px;
+}
+
+.contact_us_content h2 {
+  font-size: 37px;
+  margin: 0px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.pin_info {
+  margin-top: 3rem;
+}
+
+.pin_info_contact {
+  margin-top: 4rem;
+}
+
+.pin_info_hours {
+  margin-top: 2rem;
+}
+
+.interactive_map_pin_item {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 5px;
+  position: absolute;
+  inset-inline-end: 0px;
+  transition: transform 1s ease; /* Animation on the pin itself */
+}
+
+.interactive_map_pin_item_content h3 {
+  font-weight: 900;
+  display: flex;
+  font-size: 19px;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.image_bg {
+  margin-inline-start: 10px;
+}
+
+.interactive_map_pin_item_content p {
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-inline-start: 30px;
+  line-height: 1;
+}
+
+.interactive_map_pin_item img {
+  width: 60px;
+  height: 60px;
+  transform: translateX(0px);
+}
+
+.interactive_map_pin_item.jordan_item {
+  inset-inline-start: 290px;
+  top: 35px;
+  inset-inline-end: unset;
+}
+
+.interactive_map_pin_item.ksa_item {
+  inset-inline-start: 200px;
+  top: 95px;
+  inset-inline-end: unset;
+}
+
+.interactive_map_pin_item .image_bg img {
+  width: 20px;
+  height: 20px;
+}
+
+.interactive_map_pin_item_content h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 0px;
+  display: flex;
+}
+
+.interactive_map_pin_item_content h5 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 0px;
+}
+.interactive_map_pin_item:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 54px 55px,
+    rgba(0, 0, 0, 0.3) 0px -12px 30px, rgba(0, 0, 0, 0.3) 0px 4px 6px,
+    rgba(0, 0, 0, 0.3) 0px 12px 13px, rgba(0, 0, 0, 0.3) 0px -3px 5px;
+  padding: 5px 12px;
+  transform: scale(1.1); /* Slight scaling effect on hover */
+}
+
+.interactive_map_pin_item:hover {
+  transform: scale(1.1); /* Slight scaling effect on hover */
+}
+.interactive_map_pin_item {
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: transform 1s ease;
+}
+.interactive_map_pin_item_content {
+  position: relative;
+  opacity: 0;
+  padding: 0px;
+  border-radius: 5px;
+  visibility: hidden;
+  z-index: 1;
+  width: 0;
+  height: 80px;
+  transition: transform 1s ease;
+}
+
+/* Hover effect */
+.interactive_map_pin_item:hover img {
+  opacity: 1; /* Makes the content visible */
+}
+
+.interactive_map_pin_item:hover .interactive_map_pin_item_content {
+  opacity: 1; /* Makes the content visible */
+  visibility: visible;
+  width: 100%;
+  padding: 2px 10px;
 }
