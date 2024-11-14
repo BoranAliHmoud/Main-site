@@ -308,7 +308,7 @@ $(window).on("load", function () {
                                 <h5>
                              ${getKeyword("Phone-Call")}     
                                 </h5>
-                                <p>+966-533011408</p>
+                                <p style="direction: ltr;">+966-533011408</p>
                             </div>
                         </li>
                     </ul>
