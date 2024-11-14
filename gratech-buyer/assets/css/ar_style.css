@@ -12,3 +12,15 @@ html[dir="rtl"] .banner__slider img,
 .footer-images {
   transform: scaleX(-1); /* Flip image horizontally in RTL */
 }
+
+.interactive_map_pin_item.jordan_item {
+  inset-inline-start: 290px;
+  top: 35px;
+  inset-inline-end: unset;
+}
+
+.interactive_map_pin_item.ksa_item {
+  inset-inline-start: 200px;
+  top: 95px;
+  inset-inline-end: unset;
+}

@@ -5157,7 +5157,7 @@ input.main-search-input::placeholder {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 30px;
 }
@@ -5560,15 +5560,13 @@ input.main-search-input::placeholder {
 }
 
 .interactive_map_pin_item.jordan_item {
-  inset-inline-start: 290px;
+  inset-inline-end: 290px;
   top: 35px;
-  inset-inline-end: unset;
 }
 
 .interactive_map_pin_item.ksa_item {
-  inset-inline-start: 200px;
+  inset-inline-end: 200px;
   top: 95px;
-  inset-inline-end: unset;
 }
 
 .interactive_map_pin_item .image_bg img {
