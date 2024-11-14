@@ -116,6 +116,7 @@ function switchLanguage(lang) {
 // Attach click events to the buttons using jQuery
 
 $(window).on("load", function () {
+  // Get the current path to determine if we are in Arabic or not
   const pathParts = window.location.pathname.split("/");
   const isArabic = pathParts.includes("ar"); // Check if the current URL includes "/ar/"
 
@@ -125,9 +126,17 @@ $(window).on("load", function () {
   // This determines if we're working in Arabic or English
   const urlPath = isArabic ? "/ar/" : "/";
 
-  // Dynamically adjust image paths based on location
-  const imagePath =
-    pathParts.length > 3 ? "../assets/images/" : "assets/images/";
+  // Dynamically calculate image path based on current location
+  let imagePath = "assets/images/"; // Default image path (no subdirectories)
+
+  // Check if we are in the Arabic folder ('/ar/')
+  if (isArabic) {
+    if (pathParts.length < 5) imagePath = "../assets/images/";
+    else if (pathParts.length >= 5) imagePath = "../../assets/images/";
+  } else {
+    if (pathParts.length < 4) imagePath = "assets/images/";
+    else if (pathParts.length >= 4) imagePath = "../assets/images/";
+  }
 
   // Toggle left/right based on language
   let imageDirRight, imageDirLeft;
@@ -165,8 +174,8 @@ $(window).on("load", function () {
       "contact"
     )}</a></li>
                             <li class="ml-20 d-none d-lg-block">
-                                <button id="ar-button">AR</button>
-                                <button id="en-button">EN</button>
+                                <button class='lang-btn' id="ar-button">عربي<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="img" aria-labelledby="languageIconTitle" stroke="#fff" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#fff"> <title id="languageIconTitle">Language</title> <circle cx="12" cy="12" r="10"/> <path stroke-linecap="round" d="M12,22 C14.6666667,19.5757576 16,16.2424242 16,12 C16,7.75757576 14.6666667,4.42424242 12,2 C9.33333333,4.42424242 8,7.75757576 8,12 C8,16.2424242 9.33333333,19.5757576 12,22 Z"/> <path stroke-linecap="round" d="M2.5 9L21.5 9M2.5 15L21.5 15"/> </svg> </button>
+                                <button class='lang-btn' id="en-button">English<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="img" aria-labelledby="languageIconTitle" stroke="#fff" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#fff"> <title id="languageIconTitle">Language</title> <circle cx="12" cy="12" r="10"/> <path stroke-linecap="round" d="M12,22 C14.6666667,19.5757576 16,16.2424242 16,12 C16,7.75757576 14.6666667,4.42424242 12,2 C9.33333333,4.42424242 8,7.75757576 8,12 C8,16.2424242 9.33333333,19.5757576 12,22 Z"/> <path stroke-linecap="round" d="M2.5 9L21.5 9M2.5 15L21.5 15"/> </svg> </button>
                             </li>
                         </ul>
                     </nav>
@@ -175,7 +184,13 @@ $(window).on("load", function () {
         </div>
     </header>`
   );
-
+  if (isArabic) {
+    $("#ar-button").hide(); // Hide the Arabic button if we're already on the Arabic page
+    $("#en-button").show(); // Show the English button
+  } else {
+    $("#ar-button").show(); // Show the Arabic button
+    $("#en-button").hide(); // Hide the English button if we're on the English page
+  }
   // Language toggle buttons
   $("#ar-button").click(function () {
     switchLanguage("ar");
@@ -205,31 +220,6 @@ $(window).on("load", function () {
     window.location.href = newURL;
   }
 
-  // Language toggle buttons
-  $("#ar-button").click(function () {
-    switchLanguage("ar");
-  });
-
-  $("#en-button").click(function () {
-    switchLanguage("en");
-  });
-
-  function switchLanguage(lang) {
-    const currentURL = window.location.href;
-    const isInArabic = currentURL.includes("/ar/");
-
-    let newURL = currentURL;
-
-    if (lang === "ar" && !isInArabic) {
-      // If switching to Arabic and not already in Arabic, add '/ar/'
-      newURL = currentURL.replace(baseUrl, baseUrl + "/ar");
-    } else if (lang === "en" && isInArabic) {
-      // If switching to English and currently in Arabic, remove '/ar/'
-      newURL = currentURL.replace("/ar", "");
-    }
-
-    window.location.href = newURL;
-  }
   //Footer
   $("body").append(`<footer class="footer-area secondary-bg">
         <div class="footer-images footer__shape-regular-${imageDirLeft} wow slideIn${imageDirLeft}" data-wow-delay="00ms" data-wow-duration="1500ms">

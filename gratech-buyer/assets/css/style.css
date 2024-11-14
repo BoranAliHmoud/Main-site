@@ -5627,3 +5627,7 @@ input.main-search-input::placeholder {
   width: 100%;
   padding: 2px 10px;
 }
+.lang-btn {
+  color: #fff;
+  font-weight: 600;
+}
