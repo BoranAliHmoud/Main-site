@@ -3242,6 +3242,7 @@ input.main-search-input::placeholder {
 }
 .section-header p {
   margin-top: 30px;
+  text-align: justify;
 }
 
 .service-area {
@@ -3579,9 +3580,24 @@ input.main-search-input::placeholder {
 .about__left-item .circle-shape,
 .about-two__left-item .circle-shape {
   position: absolute;
-  top: 30px;
-  inset-inline-end: 80px;
+  top: -65px;
+  inset-inline-end: 5px;
 }
+.image.big-image:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: linear-gradient(
+    to right,
+    rgba(40, 106, 177, 0.3) 0%,
+    rgba(102, 65, 149, 0.4) 100%
+  );
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
 .about__right-item {
   position: relative;
   display: flex;
@@ -4188,9 +4204,12 @@ input.main-search-input::placeholder {
 .offer__item:hover .offer__icon svg path {
   fill: #fff;
 }
-
+.brand__wrp .swiper-slide {
+  text-align: center;
+  width: auto;
+}
 .brand__wrp {
-  padding: 40px 65px;
+  padding: 30px 15px;
   /* background: var(--gradient-bg); */
   position: relative;
   z-index: 1;
@@ -5442,7 +5461,7 @@ input.main-search-input::placeholder {
   color: #fff;
 }
 .brand__image.image img {
-  height: 70px;
+  height: 80px;
   width: 150px;
   /* background-color: #fff; */
   /* padding: 8px; */
@@ -5527,7 +5546,7 @@ input.main-search-input::placeholder {
   align-items: center;
   background-color: rgb(255, 255, 255);
   border-radius: 20px;
-  padding: 5px;
+  padding: 0 5px;
   position: absolute;
   inset-inline-end: 0px;
   transition: transform 1s ease; /* Animation on the pin itself */
@@ -5542,7 +5561,7 @@ input.main-search-input::placeholder {
 }
 
 .image_bg {
-  margin-inline-start: 10px;
+  margin-inline-end: 10px;
 }
 
 .interactive_map_pin_item_content p {
@@ -5630,4 +5649,26 @@ input.main-search-input::placeholder {
 .lang-btn {
   color: #fff;
   font-weight: 600;
+}
+.testimonial-area:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: linear-gradient(
+    to right,
+    rgba(40, 106, 177, 0.3) 0%,
+    rgba(102, 65, 149, 0.4) 100%
+  );
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.testimonial-area {
+  position: relative;
+  z-index: 0;
+}
+.lang-btn svg {
+  margin-inline-start: 7px;
 }

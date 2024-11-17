@@ -9,7 +9,9 @@ html {
 html[dir="rtl"] .banner__slider img,
 .service-area img,
 .counter__shape img,
-.footer-images {
+.footer-images,
+.banner__inner-page img,
+.service-two__content .shape img {
   transform: scaleX(-1); /* Flip image horizontally in RTL */
 }
 
@@ -23,4 +25,14 @@ html[dir="rtl"] .banner__slider img,
   inset-inline-start: 200px;
   top: 95px;
   inset-inline-end: unset;
+}
+.contact__left-item ul li i::after {
+  transform: translate(50%, -50%);
+}
+.banner__inner-page .shape3 {
+  transform: rotateY(180deg);
+}
+input {
+  text-align: right;
+  direction: ltr;
 }

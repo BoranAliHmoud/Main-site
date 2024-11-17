@@ -29,9 +29,17 @@ const keywords = {
     en: "Mohammad bin Abdulaziz Road, AlJedaie Office - Riyadh - KSA",
     ar: "طريق محمد بن عبدالعزيز، مكتب الجديعي - الرياض - المملكة العربية السعودية",
   },
+  addressjor: {
+    en: "64  Queen Nour Street – Amman - Jordan ",
+    ar: "64 شارع الملكة نور – عمان – الأردن ",
+  },
   "Contact-Us": {
     en: "Contact Us",
     ar: "اتصل بنا",
+  },
+  "Contact-new": {
+    en: "Contact us",
+    ar: "تواصل معنا",
   },
   "Quick-Link": {
     en: "Quick Link",
@@ -70,8 +78,8 @@ const keywords = {
     ar: "الخدمات",
   },
   about: {
-    en: "About",
-    ar: "حول",
+    en: "About us",
+    ar: "من نحن",
   },
   AboutInfo: {
     en: "At Digitrend for Business solution , we are dedicated to helping businesses thrive in the digital age.",
@@ -84,6 +92,30 @@ const keywords = {
   "IT-Solution": {
     en: "IT Solution",
     ar: "حلول تقنية المعلومات",
+  },
+  "technical-solutions": {
+    en: "Technical Solutions",
+    ar: "الحلول التقنية",
+  },
+  "digital-transformation": {
+    en: "Digital Transformation",
+    ar: "التحول الرقمي",
+  },
+  consultancy: {
+    en: "Consultancy",
+    ar: "الإستشارات",
+  },
+  "artificial-intelligence": {
+    en: "Artificial Intelligence",
+    ar: "الذكاء الصناعي",
+  },
+  "geographic-information-system": {
+    en: "Geographic Information System",
+    ar: "نظام المعلومات الجغرافية",
+  },
+  "manpower-outsourcing-services": {
+    en: "Manpower Outsourcing Services",
+    ar: "خدمات الاستعانة بمصادر خارجية للقوى العاملة",
   },
 };
 function getKeyword(keyword) {
@@ -163,15 +195,13 @@ $(window).on("load", function () {
       "about"
     )}</a></li>
                             <li>
-                                <a href="#0">${getKeyword("services")}</a>
-                                <ul class="sub-menu">
-                                    <li><a href="${baseUrl}${urlPath}services/service-solutions.html">IT Solutions</a></li>
-                                    <li><a href="${baseUrl}${urlPath}services/service.html">IT Services</a></li>
-                                    <li><a href="${baseUrl}${urlPath}services/service-details.html">Service Details</a></li>
-                                </ul>
+                                <a href="${baseUrl}${urlPath}services/service.html">${getKeyword(
+      "services"
+    )}</a>
+                               
                             </li>
                             <li><a href="${baseUrl}${urlPath}contact.html">${getKeyword(
-      "contact"
+      "Contact-new"
     )}</a></li>
                             <li class="ml-20 d-none d-lg-block">
                                 <button class='lang-btn' id="ar-button">عربي<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="img" aria-labelledby="languageIconTitle" stroke="#fff" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#fff"> <title id="languageIconTitle">Language</title> <circle cx="12" cy="12" r="10"/> <path stroke-linecap="round" d="M12,22 C14.6666667,19.5757576 16,16.2424242 16,12 C16,7.75757576 14.6666667,4.42424242 12,2 C9.33333333,4.42424242 8,7.75757576 8,12 C8,16.2424242 9.33333333,19.5757576 12,22 Z"/> <path stroke-linecap="round" d="M2.5 9L21.5 9M2.5 15L21.5 15"/> </svg> </button>
@@ -247,30 +277,27 @@ $(window).on("load", function () {
                     ${getKeyword("AboutInfo")}
                      </p>
                     <div class="social-icon">
-                        <a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#0"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#0"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#0"><i class="fa-brands fa-youtube"></i></a>
+                       
+                        <a href="https://www.linkedin.com/company/digitrendbs" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="footer__item item-sm wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-                    <h3 class="footer-title">${getKeyword("IT-Solution")}</h3>
+                <div class="footer__item item-big wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                    <h3 class="footer-title">${getKeyword("Our-Services")}</h3>
                     <ul>
-                        <li><a href="${urlPath}service-details.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i> ${getKeyword("it-management")}</a></li>
-                        <li><a href="${urlPath}service-details.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i>${getKeyword("seo-optimization")} </a>
-                        </li>
-                        <li><a href="${urlPath}service-details.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i>${getKeyword("web-development")} </a>
-                        </li>
-                        <li><a href="${urlPath}service-details.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i>${getKeyword("cyber-security")} </a></li>
-                        <li><a href="${urlPath}service-details.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i>${getKeyword("data-security")} 
-                                 </a></li>
+                        <li><a href="${baseUrl}${urlPath}services/technical-solutions.html"><i class="fa-regular fa-angles-${imageDirRight} mx-1"></i> ${getKeyword("technical-solutions")}</a></li>
+                        <li><a href="${baseUrl}${urlPath}services/digital-transformation.html"><i class="fa-regular fa-angles-${imageDirRight} mx-1"></i>${getKeyword("digital-transformation")}</a></li>
+                        <li><a href="${baseUrl}${urlPath}services/consultancy.html"><i class="fa-regular fa-angles-${imageDirRight} mx-1"></i>${getKeyword("consultancy")}</a></li>
+                        <li><a href="${baseUrl}${urlPath}services/artificial-intelligence.html"><i class="fa-regular fa-angles-${imageDirRight} mx-1"></i>${getKeyword("artificial-intelligence")} </a></li>
+                        <li><a href="${baseUrl}${urlPath}services/manpower-outsourcing-services.html"><i class="fa-regular fa-angles-${imageDirRight} mx-1"></i>${getKeyword("manpower-outsourcing-services")}</a></li>
+                        <li><a href="${baseUrl}${urlPath}services/geographic-information-system.html"><i class="fa-regular fa-angles-${imageDirRight} mx-1"></i>${getKeyword("geographic-information-system")}</a></li>
                     </ul>
                 </div>
-                <div class="footer__item item-sm wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+                <div class="footer__item item-big wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
                     <h3 class="footer-title">${getKeyword("Quick-Link")}</h3>
                     <ul>
-                        <li><a href="about.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i>${getKeyword("About-Digitrend")}  </a></li>
-                        <li><a href="services/service.html"><i class="fa-regular fa-angles-${imageDirRight} me-1"></i> ${getKeyword("Our-Services")}</a>
+                        <li><a href="about.html"><i class="fa-regular fa-angles-${imageDirRight} mx-1"></i>${getKeyword("About-Digitrend")}  </a></li>
+                        <li><a href="services/service.html"><i class="fa-regular fa-angles-${imageDirRight} mx-1"></i> ${getKeyword("Our-Services")}</a>
+                        <li><a href="contact.html"><i class="fa-regular fa-angles-${imageDirRight} mx-1"></i> ${getKeyword("Contact-new")}</a>
                         </li>
                     </ul>
                 </div>
@@ -279,6 +306,8 @@ $(window).on("load", function () {
                     <p class="mb-20">             ${getKeyword(
                       "address"
                     )}    </p>
+<p class="mb-20">             ${getKeyword("addressjor")}    </p>
+                    
                     <ul class="footer-contact">
                         <li>
                             <i class="fa-regular fa-envelope"></i>
@@ -298,7 +327,7 @@ $(window).on("load", function () {
                                 <h5>
                              ${getKeyword("Phone-Call")}     
                                 </h5>
-                                <p style="direction: ltr;">+966-533011408</p>
+                                <p>SA: +966-533011408 <br/> JO: +962-796660116</p>
                             </div>
                         </li>
                     </ul>
@@ -312,16 +341,8 @@ $(window).on("load", function () {
                     <p class="wow fadeInDown" data-wow-delay="00ms" data-wow-duration="1500ms">&copy; ${getKeyword(
                       "All-Copyright"
                     )}
-                        by <a href="#0">${getKeyword("DIGITRENDBS")} </a></p>
-                    <ul class="d-flex align-items-center gap-4 wow fadeInDown" data-wow-delay="200ms"
-                        data-wow-duration="1500ms">
-                        <li><a href="#0">${getKeyword(
-                          "terms-condition"
-                        )}</a></li>
-                        <li><a href="#0">${getKeyword(
-                          "privacy-policy"
-                        )} </a></li>
-                    </ul>
+                         <a href="#0">${getKeyword("DIGITRENDBS")} </a></p>
+                   
                 </div>
             </div>
         </div>
@@ -557,11 +578,11 @@ $(window).on("load", function () {
   // Brand slider area start here ***
   var swiper = new Swiper(".brand__slider", {
     loop: "true",
-    spaceBetween: 30,
+    spaceBetween: 25,
     speed: 300,
     autoplay: {
       delay: 3000,
-      disableOnInteraction: false,
+      disableOnInteraction: true,
     },
     breakpoints: {
       1200: {
