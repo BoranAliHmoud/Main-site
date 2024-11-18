@@ -30,8 +30,8 @@ const keywords = {
     ar: "طريق محمد بن عبدالعزيز، مكتب الجديعي - الرياض - المملكة العربية السعودية",
   },
   addressjor: {
-    en: "64  Queen Nour Street – Amman - Jordan ",
-    ar: "64 شارع الملكة نور – عمان – الأردن ",
+    en: "46  Queen Nour Street – Amman - Jordan ",
+    ar: "46 شارع الملكة نور – عمان – الأردن ",
   },
   "Contact-Us": {
     en: "Contact Us",
@@ -189,8 +189,14 @@ $(window).on("load", function () {
                 <img src="${imagePath}logo/logo.png" alt="logo">
                 </a>
                 <div class="main-menu">
+                 <input type="checkbox" name="" id="">
+          <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+          </div>
                     <nav>
-                        <ul>
+                        <ul class="menu-items">
                             <li><a href="${baseUrl}${urlPath}about.html">${getKeyword(
       "about"
     )}</a></li>
@@ -203,7 +209,7 @@ $(window).on("load", function () {
                             <li><a href="${baseUrl}${urlPath}contact.html">${getKeyword(
       "Contact-new"
     )}</a></li>
-                            <li class="ml-20 d-none d-lg-block">
+                            <li>
                                 <button class='lang-btn' id="ar-button">عربي<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="img" aria-labelledby="languageIconTitle" stroke="#fff" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#fff"> <title id="languageIconTitle">Language</title> <circle cx="12" cy="12" r="10"/> <path stroke-linecap="round" d="M12,22 C14.6666667,19.5757576 16,16.2424242 16,12 C16,7.75757576 14.6666667,4.42424242 12,2 C9.33333333,4.42424242 8,7.75757576 8,12 C8,16.2424242 9.33333333,19.5757576 12,22 Z"/> <path stroke-linecap="round" d="M2.5 9L21.5 9M2.5 15L21.5 15"/> </svg> </button>
                                 <button class='lang-btn' id="en-button">English<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="img" aria-labelledby="languageIconTitle" stroke="#fff" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#fff"> <title id="languageIconTitle">Language</title> <circle cx="12" cy="12" r="10"/> <path stroke-linecap="round" d="M12,22 C14.6666667,19.5757576 16,16.2424242 16,12 C16,7.75757576 14.6666667,4.42424242 12,2 C9.33333333,4.42424242 8,7.75757576 8,12 C8,16.2424242 9.33333333,19.5757576 12,22 Z"/> <path stroke-linecap="round" d="M2.5 9L21.5 9M2.5 15L21.5 15"/> </svg> </button>
                             </li>
@@ -352,6 +358,10 @@ $(window).on("load", function () {
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
     </div>`);
+
+  $('input[type="checkbox"]').on("change", function () {
+    $(".menu-items").toggle();
+  });
 });
 (function ($) {
   ("use strict");

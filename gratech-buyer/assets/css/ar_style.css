@@ -36,3 +36,22 @@ input {
   text-align: right;
   direction: ltr;
 }
+@media (max-width: 650px) {
+  .header__main input[type="checkbox"] {
+    inset-inline-start: 40px;
+    inset-inline-end: unset;
+  }
+}
+@media (max-width: 767px) {
+  .interactive_map_pin_item.jordan_item {
+    inset-inline-start: 50px;
+    top: 35px;
+    inset-inline-end: unset;
+  }
+
+  .interactive_map_pin_item.ksa_item {
+    inset-inline-start: 40px;
+    top: 95px;
+    inset-inline-end: unset;
+  }
+}
